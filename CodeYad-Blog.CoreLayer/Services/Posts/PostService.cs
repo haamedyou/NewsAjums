@@ -136,5 +136,18 @@ namespace News_Ajums.CoreLayer.Services.Posts
         {
             return _context.Posts.Any(p => p.Slug == slug.ToSlug());
         }
+
+
+        public List<PostSlidShowDto> PostSlidSows()
+        {
+            return _context.Posts.Where(p => p.IsSpecial).
+                Select(p => new PostSlidShowDto()
+                {
+                    PostId = p.Id,
+                    Title = p.Title,
+                    ImageName = p.ImageName,
+                    IsSpecial = p.IsSpecial,
+                }).ToList();
+        }
     }
 }

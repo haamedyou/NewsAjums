@@ -15,5 +15,7 @@ namespace News_Ajums.CoreLayer.Services.Posts
         List<PostDto> GetRelatedPosts(int groupId);
         List<PostDto> GetPopularPost();
         void IncreaseVisit(int postId);
+
+        List<PostSlidShowDto> PostSlidSows();
     }
 }

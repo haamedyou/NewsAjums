@@ -17,6 +17,8 @@ namespace News_Ajums.Web.Pages
     {
         private readonly IPostService _postService;
         private readonly IMainPageService _mainPageService;
+
+       
         public IndexModel(IPostService postService, IMainPageService mainPageService)
         {
             _postService = postService;
@@ -25,9 +27,12 @@ namespace News_Ajums.Web.Pages
 
         public MainPageDto MainPageData { get; set; }
 
+        public List<PostSlidShowDto> PostSlids { get; set; }
+
         public void OnGet()
         {
             MainPageData = _mainPageService.GetData();
+            PostSlids = _postService.PostSlidSows();
         }
 
         public IActionResult OnGetLatestPosts(string categorySlug)
