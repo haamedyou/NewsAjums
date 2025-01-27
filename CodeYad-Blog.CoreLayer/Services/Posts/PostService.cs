@@ -146,6 +146,7 @@ namespace News_Ajums.CoreLayer.Services.Posts
                     PostId = p.Id,
                     Title = p.Title,
                     ImageName = p.ImageName,
+                    Slug=p.Slug,
                     IsSpecial = p.IsSpecial,
                 }).ToList();
         }
